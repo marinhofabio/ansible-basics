@@ -3,23 +3,23 @@
   become: yes
   gather_facts: false
   tasks:
-   - name: Install nginx
+   - name: INSTALLING NGINX
      yum:
        name: nginx
        state: present
-   - name: install the 'Development tools' package group
+   - name: INSTALLING THE DEVELOPMENT GROUP PACKAGES
      yum:
        name: "@Development tools"
        state: present
-   - name: Installing the openssl development packages
+   - name: INSTALLING THE OPENSSL-DEVEL PACKAGES
      yum:
        name:  openssl-devel
        state: present
-   - name: Installing Yum Utils package
+   - name: INSTALLING YUM-UTIL PACKAGES
      yum:
        name: yum-utils
        state: present
-   - name: Installing vim packages
+   - name: INSTALLING VIM PACKAGE AND DEPENDENCIES
      yum:
        name: vim
        state: present

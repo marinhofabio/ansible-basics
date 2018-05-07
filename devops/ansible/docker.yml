@@ -3,11 +3,11 @@
   become: yes
   gather_facts: false
   tasks:
-   - name: Install Docker
+   - name: INSTALLING DOCKER
      yum:
        name: docker
        state: present
-   - name: Ensure the docker service is running
+   - name: ENSURE THE DOCKER SERVICE IS RUNNING AFTER INSTALLATION
      service:
        name: docker
        state: started

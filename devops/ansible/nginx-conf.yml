@@ -1,8 +1,9 @@
 - hosts: all
   user: fmarinho
   become: yes
+  gather_facts: false
   tasks:
-   - name: Applying nginx conf file
+   - name: APPLYING NGINX CONFIGURATION FILE
      template:
        src: /srv/templates/nginx.conf 
        dest: /etc/nginx/nginx.conf

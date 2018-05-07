@@ -3,7 +3,7 @@
   become: yes
   gather_facts: false
   tasks:
-   - name: Install Postgres
+   - name: INSTALLING POSTGRES
      yum:
        name: postgresql-server
        state: latest

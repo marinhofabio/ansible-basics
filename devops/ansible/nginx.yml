@@ -1,8 +1,9 @@
 - hosts: all
   user: fmarinho
   become: yes
+  gather_facts: false
   tasks:
-   - name: Ensure the nginx service is running
+   - name: ENSURE THE NGINX SERVICE IS RUNNING 
      service:
        name: nginx
        state: started

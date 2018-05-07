@@ -1,6 +1,7 @@
 - hosts: all
   user: fmarinho
   become: yes
+  gather_facts: false
   tasks:
    -  service:
        name: nginx

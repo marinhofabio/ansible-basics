@@ -1,8 +1,9 @@
 - hosts: all
   user: fmarinho
   become: yes
+  gather_facts: false
   tasks:
-   - name: Install java 1.8 packages 
+   - name: INSTALLING JAVA 1.8 PACKAGE AND DEPENDENCIES 
      yum:
        name: java-1.8.0-openjdk.x86_64
        state: present

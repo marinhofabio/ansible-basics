@@ -1,6 +1,11 @@
 - hosts: all
   user: fmarinho
   become: yes
+  gather_facts: false
   tasks:
-   - name: Removing Old Kernels from the system
+   - name: INSTALLING YUM-UTILS PACKAGE
+     yum:
+       name: yum-utils
+       state: present
+   - name: REMOVING OLD KERNELS FROM THE SYSTEM
      command: package-cleanup --oldkernels -y
