@@ -1,0 +1,8 @@
+- hosts: workstation
+  user: fmarinho
+  become: yes
+  tasks:
+   - name: Install the openssl packages and dependencies
+     yum:
+       name: openssl-devel
+       state: present

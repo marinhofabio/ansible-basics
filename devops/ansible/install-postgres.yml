@@ -1,0 +1,8 @@
+- hosts: workstation
+  user: fmarinho
+  become: yes
+  tasks:
+   - name: Install the postgresql package and dependencies
+     yum:
+       name: postgresql-server
+       state: latest

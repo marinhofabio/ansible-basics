@@ -1,0 +1,8 @@
+- hosts: workstation
+  user: fmarinho
+  become: yes
+  tasks:
+   - name: Install the 'Development Tools' package group
+     yum:
+       name: "@Development Tools"
+       state: present

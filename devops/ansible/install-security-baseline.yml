@@ -1,0 +1,13 @@
+- hosts: workstation
+  user: fmarinho
+  become: yes
+  tasks:
+  - name: Installing baseline file
+    template:
+      src:  /home/fmarinho/linux-academy/devops/ansible/baseline.template
+      dest: /etc/sysctl.d/90-security-baseline.conf
+      owner: root
+      group: root
+      mode: "u=rw,g=r,o=r"
+  - name: Make the kernel read the security-baseline file
+    command: sysctl --system

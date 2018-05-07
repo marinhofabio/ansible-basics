@@ -1,0 +1,8 @@
+- hosts: workstation
+  user: fmarinho
+  become: yes
+  tasks:
+   - name: Update all packages in this system to the latest version avaiable
+     yum:
+       name: '*'
+       state: latest
