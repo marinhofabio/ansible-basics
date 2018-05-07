@@ -1,0 +1,18 @@
+- hosts: all
+  user: fmarinho
+  become: yes
+  gather_facts: false
+  tasks:
+   - name: INSTALLING LYNIS SECURITY BASELINE TOOL
+     yum:
+       name: lynis
+       state: present
+   - name: COPYING BASELINE FILE TO MAKE ALL KERNEL HARDENING TAKE EFFECT
+     template:
+       src:  /home/fmarinho/ansible/template/template-lynis
+       dest: /etc/sysctl.d/90-security-baseline.conf
+       owner: root
+       group: root
+       mode: "u=rw,g=r,o=r"
+   - name: MAKE KERNEL READ THE FILE AND LOAD ALL TUNABLES
+     command: sysctl --system

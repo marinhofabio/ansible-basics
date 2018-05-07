@@ -1,0 +1,13 @@
+- hosts: all
+  user: fmarinho
+  become: yes
+  tasks:
+   - name: Disabling selinux
+     command: setenforce 0
+   - name: Applying selinux file
+     template:
+       src:  /home/fmarinho/ansible/template/selinux-config 
+       dest: /etc/selinux/config
+       owner: root
+       group: root
+       mode: "u=rw,g=r,o=r" 

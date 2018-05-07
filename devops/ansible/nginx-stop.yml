@@ -1,0 +1,8 @@
+- hosts: all
+  user: fmarinho
+  become: yes
+  tasks:
+   - name: Ensure the nginx service is not running
+     service:
+       name: nginx
+       state: stopped

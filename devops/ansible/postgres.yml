@@ -1,8 +1,9 @@
 - hosts: all
   user: fmarinho
   become: yes
+  gather_facts: false
   tasks:
-   - name: UPDATE ALL PACKAGES TO THE LATEST VERSION AVAIABLE 
+   - name: Install Postgres
      yum:
-       name: '*'
+       name: postgresql-server
        state: latest

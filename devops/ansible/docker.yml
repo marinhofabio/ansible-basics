@@ -1,0 +1,13 @@
+- hosts: all
+  user: fmarinho
+  become: yes
+  gather_facts: false
+  tasks:
+   - name: Install Docker
+     yum:
+       name: docker
+       state: present
+   - name: Ensure the docker service is running
+     service:
+       name: docker
+       state: started

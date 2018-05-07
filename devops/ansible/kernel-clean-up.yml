@@ -1,0 +1,6 @@
+- hosts: all
+  user: fmarinho
+  become: yes
+  tasks:
+   - name: Removing Old Kernels from the system
+     command: package-cleanup --oldkernels -y

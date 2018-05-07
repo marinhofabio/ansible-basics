@@ -1,0 +1,25 @@
+- hosts: all
+  user: fmarinho
+  become: yes
+  gather_facts: false
+  tasks:
+   - name: Install nginx
+     yum:
+       name: nginx
+       state: present
+   - name: install the 'Development tools' package group
+     yum:
+       name: "@Development tools"
+       state: present
+   - name: Installing the openssl development packages
+     yum:
+       name:  openssl-devel
+       state: present
+   - name: Installing Yum Utils package
+     yum:
+       name: yum-utils
+       state: present
+   - name: Installing vim packages
+     yum:
+       name: vim
+       state: present

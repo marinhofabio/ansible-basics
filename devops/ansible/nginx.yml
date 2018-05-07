@@ -1,0 +1,8 @@
+- hosts: all
+  user: fmarinho
+  become: yes
+  tasks:
+   - name: Ensure the nginx service is running
+     service:
+       name: nginx
+       state: started
