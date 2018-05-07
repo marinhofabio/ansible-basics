@@ -9,7 +9,7 @@
        state: present
    - name: COPYING BASELINE FILE TO MAKE ALL KERNEL HARDENING TAKE EFFECT
      template:
-       src:  template-files/baseline.yml
+       src:  template-files/baseline.template
        dest: /etc/sysctl.d/90-security-baseline.conf
        owner: root
        group: root
