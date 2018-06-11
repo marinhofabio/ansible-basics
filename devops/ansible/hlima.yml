@@ -1,0 +1,22 @@
+- hosts: all
+  user: fmarinho
+  become: yes
+  gather_facts: false
+  tasks:
+  - name: ADD GROUP HLIMA
+    group:
+      name: hlima
+      gid: 1004
+      state: present   
+  - name: ADD USER HLIMA
+    user:
+      name: hlima
+      comment: Hugo Lima
+      uid: 1004
+      shell: /bin/bash
+      group: hlima
+      groups: wheel
+      state: present
+      generate_ssh_key: yes
+      ssh_key_bits: 2048
+      ssh_key_file: .ssh/id_rsa

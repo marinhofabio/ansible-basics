@@ -1,0 +1,41 @@
+- hosts: all
+  user: fmarinho
+  become: yes
+  gather_facts: false
+  tasks:
+  - name: ADD GROUP LSALES
+    group:
+      name: lsales
+      gid: 1001
+      state: present   
+  - name: ADD USER LSALES
+    user:
+      name: lsales
+      comment: Leonardo Sales
+      uid: 1001
+      shell: /bin/bash
+      group: lsales
+      groups: wheel
+      state: present
+      generate_ssh_key: yes
+      ssh_key_bits: 2048
+      ssh_key_file: .ssh/id_rsa
+  - name: ADD GROUP ANTONIOT
+    group:
+      name: antoniot
+      gid: 1002
+      state: present
+  - name: ADD USER ANTONIOT
+    user:
+      name: antoniot
+      comment: Antonio Teixeira
+      uid: 1002
+      shell: /bin/bash
+      group: antoniot
+      groups: wheel
+      state: present
+      generate_ssh_key: yes
+      ssh_key_bits: 2048
+      ssh_key_file: .ssh/id_rsa
+
+
