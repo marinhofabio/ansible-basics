@@ -1,0 +1,26 @@
+- hosts: workstation
+  user: fmarinho
+  become: yes
+  gather_facts: false
+  tasks:
+  - name: APPLYING PERMISSIONS ON FILES
+    file: 
+      path: /etc/fstab
+      owner: root
+      group: root
+      mode: 0600
+      attributes: i
+  - name: APPLYING PERMISSIONS ON NETWORK FILE IFCFG-ENP0S8
+    file:
+      path: /etc/sysconfig/network-scripts/ifcfg-enp0s8
+      owner: root
+      group: root
+      mode: 0600
+      attributes: i
+  - name: APPLYING PERMISSIONS ON NETWORK FILE IFCFG-ENP0S3
+    file: 
+      path: /etc/sysconfig/network-scripts/ifcfg-enp0s3
+      owner: root
+      group: root
+      mode: 0600
+      attributes: i
