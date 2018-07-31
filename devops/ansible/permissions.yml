@@ -8,19 +8,19 @@
       path: /etc/fstab
       owner: root
       group: root
-      mode: 0600
+      mode: 0660
       attributes: i
   - name: APPLYING PERMISSIONS ON NETWORK FILE IFCFG-ENP0S8
     file:
       path: /etc/sysconfig/network-scripts/ifcfg-enp0s8
       owner: root
       group: root
-      mode: 0600
+      mode: 0660
       attributes: i
   - name: APPLYING PERMISSIONS ON NETWORK FILE IFCFG-ENP0S3
     file: 
       path: /etc/sysconfig/network-scripts/ifcfg-enp0s3
       owner: root
       group: root
-      mode: 0600
+      mode: 0660
       attributes: i
