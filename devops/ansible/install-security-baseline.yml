@@ -5,7 +5,7 @@
   tasks:
   - name: Installing baseline file
     template:
-      src:  /home/fmarinho/linux-academy/devops/ansible/baseline.template
+      src:  template-files/baseline.template
       dest: /etc/sysctl.d/90-security-baseline.conf
       owner: root
       group: root
