@@ -3,10 +3,6 @@
   become: yes
   gather_facts: false
   tasks:
-   - name: INSTALLING NGINX
-     yum:
-       name: nginx
-       state: present
    - name: INSTALLING THE DEVELOPMENT GROUP PACKAGES
      yum:
        name: "@Development tools"
@@ -15,11 +11,7 @@
      yum:
        name:  openssl-devel
        state: present
-   - name: INSTALLING YUM-UTIL PACKAGES
+   - name: INSTALLING EPEL REPOSITORY
      yum:
-       name: yum-utils
-       state: present
-   - name: INSTALLING VIM PACKAGE AND DEPENDENCIES
-     yum:
-       name: vim
+       name: epel-release
        state: present
