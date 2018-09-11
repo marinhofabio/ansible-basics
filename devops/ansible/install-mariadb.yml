@@ -5,5 +5,5 @@
   tasks:
    - name: INSTALLING MARIADB PACKAGE AND IT'S DEPENDENCIES 
      yum:
-       name:  mariadb-server mariadb-devel mariadb-libs
+       name:  mariadb-server,mariadb-devel,mariadb-libs
        state: present
