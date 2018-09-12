@@ -3,34 +3,34 @@
   become: yes
   gather_facts: false
   tasks:
-   # TASK 01 DESCRIPTION #
+   # By setting this to 1, users can no longer create soft or hard links to files which they do not own. #
    - name: APPLYING KERNEL HARDENING BASELINE01
      command: "sysctl -w fs.protected_hardlinks=1"
-   # TASK 02 DESCRIPTION #
+   # By setting this to 1, symbolic links are permitted to be followed only when outside a sticky world-writable directory. #
    - name: APPLYING KERNEL HARDENING BASELINE02
      command: "sysctl -w fs.protected_symlinks=1"
-   # TASK 03 DESCRIPTION #
+   # Disallow core dumping by setuid and setgid programs. #
    - name: APPLYING KERNEL HARDENING BASELINE03
      command: "sysctl -w fs.suid_dumpable=0"
-   # TASK 04 DESCRIPTION #
+   # By setting core_uses_pid to 1, the coredump filename becomes core.PID. #
    - name: APPLYING KERNEL HARDENING BASELINE04
      command: "sysctl -w kernel.core_uses_pid=1"
-   # TASK 05 DESCRIPTION #
+   # When the value in this file is 0, ctrl-alt-del is trapped and sent to the init(1) program to handle a graceful restart. #
    - name: APPLYING KERNEL HARDENING BASELINE05
      command: "sysctl -w kernel.ctrl-alt-del=0"
-   # TASK 06 DESCRIPTION #
+   # This toggle indicates whether unprivileged users are prevented from using dmesg to view messages from the kernel’s log buffer.#
    - name: APPLYING KERNEL HARDENING BASELINE06
      command: "sysctl -w kernel.dmesg_restrict=1"
-   # TASK 07 DESCRIPTION #
+   # This toggle indicates whether restrictions are placed on exposing kernel addresses via /proc and other interfaces.#
    - name: APPLYING KERNEL HARDENING BASELINE07
      command: "sysctl -w kernel.kptr_restrict=2"
-   # TASK 08 DESCRIPTION #
+   # help defeat certain types of buffer overflow attacks. The default and recommended setting is 2. #
    - name: APPLYING KERNEL HARDENING BASELINE08    
      command: "sysctl -w kernel.randomize_va_space=2"
    # TASK 09 DESCRIPTION #
    - name: APPLYING KERNEL HARDENING BASELINE09
      command: "sysctl -w kernel.sysrq=0"
-   # TASK 10 DESCRIPTION #
+   # Only a parent process can be debugged using ptrace. #
    - name: APPLYING KERNEL HARDENING BASELINE10     
      command: "sysctl -w kernel.yama.ptrace_scope=1"
    # TASK 11 DESCRIPTION #
@@ -81,15 +81,15 @@
    # TASK 26 DESCRIPTION #
    - name: APPLYING KERNEL HARDENING BASELINE26     
      command: "sysctl -w net.ipv4.tcp_timestamps=1"
-   # TASK 27 DESCRIPTION #
+   # Accept Redirects. Functional default: enabled if local forwarding is disabled. disabled if local forwarding is enabled. # 
    - name: APPLYING KERNEL HARDENING BASELINE27     
      command: "sysctl -w net.ipv6.conf.all.accept_redirects=0"
-   # TASK 28 DESCRIPTION #
+   # # Accept only routing header type 2 # 
    - name: APPLYING KERNEL HARDENING BASELINE28
      command: "sysctl -w net.ipv6.conf.all.accept_source_route=0"
-   # TASK 29 DESCRIPTION #
+   # Accept Redirects. Functional default: enabled if local forwarding is disabled. disabled if local forwarding is enabled. #
    - name: APPLYING KERNEL HARDENING BASELINE29  
      command: "sysctl -w net.ipv6.conf.default.accept_redirects=0"
-   # TASK 30 DESCRIPTION #
+   # Accept only routing header type 2 #
    - name: APPLYING KERNEL HARDENING BASELINE30
      command: "sysctl -w net.ipv6.conf.default.accept_source_route=0"
