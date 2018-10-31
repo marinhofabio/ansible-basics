@@ -1,4 +1,4 @@
-- hosts: workstation
+- hosts: all
   user: fmarinho
   become: yes
   gather_facts: false
