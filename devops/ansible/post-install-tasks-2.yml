@@ -3,7 +3,7 @@
   become: yes
   gather_facts: false
   tasks:
-   - name: Installing basic packages
+   - name: Installing Basic Packages 
      yum:
        name: 
        - '@Development Tools'
