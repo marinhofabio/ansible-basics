@@ -7,9 +7,10 @@
    - name: INSTALLING MARIADB PACKAGE AND IT'S DEPENDENCIES 
      yum:
        name:
+       - 'mariadb'
        - 'mariadb-bench'
        - 'mariadb-devel' 
        - 'mariadb-libs' 
        - 'mariadb-server' 
        - 'mariadb-test' 
-       state: absent
+       state: present
