@@ -1,9 +1,15 @@
 - hosts: all
   user: fmarinho
   become: yes
+  connection: ssh
   gather_facts: false
   tasks:
    - name: INSTALLING MARIADB PACKAGE AND IT'S DEPENDENCIES 
      yum:
-       name:  mariadb-server,mariadb-devel,mariadb-libs
-       state: present
+       name:
+       - 'mariadb-bench'
+       - 'mariadb-devel' 
+       - 'mariadb-libs' 
+       - 'mariadb-server' 
+       - 'mariadb-test' 
+       state: absent
