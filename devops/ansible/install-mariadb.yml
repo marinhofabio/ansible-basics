@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: servers
   user: fmarinho
   become: yes
   connection: ssh
@@ -14,3 +14,7 @@
        - 'mariadb-server' 
        - 'mariadb-test' 
        state: present
+   - name: ENSURE THAT THE SERVICE IS RUNNING AFTER INSTALLATION
+     service:
+       name:  mariadb
+       state: started
