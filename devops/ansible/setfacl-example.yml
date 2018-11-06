@@ -1,0 +1,8 @@
+- hosts: servers
+  user: fmarinho
+  become: yes
+  gather_facts: false
+  connection: ssh
+  tasks:
+   - name: CREATING ACL TO ALLOW READ ACCESS TO THE FILESYSTEM TABLE FILE
+     command: setfacl -m u:fmarinho:r /etc/fstab 
