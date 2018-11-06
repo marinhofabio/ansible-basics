@@ -1,6 +1,7 @@
-- hosts: workstation
+- hosts: servers
   user: fmarinho
   become: yes
+  connection: ssh
   gather_facts: false
   tasks:
   - name: Installing baseline file

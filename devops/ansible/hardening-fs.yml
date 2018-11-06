@@ -1,6 +1,7 @@
-- hosts: all
+- hosts: servers
   user: fmarinho
   become: yes
+  connection: ssh
   gather_facts: false
   tasks:
    # TASK 01 DESCRIPTION #
