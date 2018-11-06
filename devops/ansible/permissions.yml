@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: servers
   user: fmarinho
   become: yes
   connection: ssh
@@ -9,5 +9,5 @@
       path: /etc/fstab
       owner: root
       group: root
-      mode: 0660
+      mode:  0660
       attributes: i
