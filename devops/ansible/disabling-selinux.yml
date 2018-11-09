@@ -8,7 +8,7 @@
      command: setenforce 0
    - name: APPLYING SELINUX CONFIGURATION FILE
      template:
-       src:   template-files/selinux-config 
+       src:   files/config 
        dest:  /etc/selinux/config
        owner: root
        group: root
