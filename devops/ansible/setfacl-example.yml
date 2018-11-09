@@ -4,5 +4,5 @@
   connection: ssh
   gather_facts: false
   tasks:
-   - name: CREATING ACL TO ALLOW READ ACCESS TO THE FILESYSTEM TABLE FILE
+   - name: CREATING AN ACL TO ALLOW READ ACCESS TO THE FILESYSTEM TABLE FILE
      command: setfacl -m u:fmarinho:r /etc/fstab 
