@@ -6,5 +6,5 @@
   tasks:
    - name: UPDATE ALL PACKAGES TO THE LATEST VERSION AVAIABLE 
      yum:
-       name: '*'
+       name:  '*'
        state: latest

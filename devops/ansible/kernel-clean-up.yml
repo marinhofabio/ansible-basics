@@ -6,7 +6,7 @@
   tasks:
    - name: INSTALLING YUM-UTILS PACKAGE
      yum:
-       name: yum-utils
+       name:  yum-utils
        state: present
    - name: REMOVING OLD KERNELS FROM THE SYSTEM
      command: package-cleanup --oldkernels -y

@@ -5,5 +5,5 @@
   gather_facts: false
   tasks:
    -  service:
-       name: nginx
+       name:  nginx
        state: reloaded

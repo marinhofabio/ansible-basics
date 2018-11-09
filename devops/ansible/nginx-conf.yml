@@ -6,11 +6,11 @@
   tasks:
    - name: APPLYING NGINX CONFIGURATION FILE
      template:
-       src: /srv/templates/nginx.conf 
-       dest: /etc/nginx/nginx.conf
+       src:   /srv/templates/nginx.conf 
+       dest:  /etc/nginx/nginx.conf
        owner: root
        group: root
        mode:  0660 
    -  service:
-       name: nginx
+       name:  nginx
        state: reloaded

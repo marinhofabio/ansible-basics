@@ -6,5 +6,5 @@
   tasks:
    - name: INSTALLING THE OPENSSL PACKAGE AND DEPENDENCIES
      yum:
-       name: openssl-devel
+       name:  openssl-devel
        state: present

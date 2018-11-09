@@ -6,5 +6,5 @@
   tasks:
    - name: INSTALLING THE 'DEVELOPMENT TOOLS' PACKAGE GROUP
      yum:
-       name: "@Development Tools"
+       name:  "@Development Tools"
        state: present

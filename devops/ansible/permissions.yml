@@ -6,7 +6,7 @@
   tasks:
   - name: HARDENING FSTAB FILE
     file: 
-      path: /etc/fstab
+      path:  /etc/fstab
       owner: root
       group: root
       mode:  0660

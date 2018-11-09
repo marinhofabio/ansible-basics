@@ -6,5 +6,5 @@
   tasks:
    - name: ENSURE THE NGINX SERVICE IS NOT RUNNING
      service:
-       name: nginx
+       name:  nginx
        state: stopped

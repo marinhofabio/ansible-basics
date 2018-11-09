@@ -6,5 +6,5 @@
   tasks:
    - name: INSTALLING POSTGRESQL PACKAGE AND DEPENDENCIES
      yum:
-       name: postgresql-server
+       name:  postgresql-server
        state: latest
