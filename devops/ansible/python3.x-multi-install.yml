@@ -1,0 +1,33 @@
+- hosts: servers
+  user: fmarinho
+  become: yes
+  connection: ssh
+  gather_facts: false
+  tasks:
+   - name: Installing Software Collection repositories 
+     yum:
+       name: 
+       - 'centos-release-scl'
+       state: present
+   - name: Installing Python 3.5 and Python 3.6 Packages
+     yum:
+       name:
+       - 'rh-python35'
+       - 'rh-python36'
+       state: present
+   - name: Copying file to ld.so.conf.d to load python 3.5 shared libraries
+     template:
+       src:   files/python35.conf
+       dest:  /etc/ld.so.conf.d/python35.conf
+       owner: root
+       group: root
+       mode:  0440
+   - name: Copying file to ld.so.conf.d to load python 3.6 shared libraries
+     template:
+       src:   files/python36.conf
+       dest:  /etc/ld.so.conf.d/python36.conf
+       owner: root
+       group: root
+       mode:  0440
+   - name: Executing command to load python 3.5 and python 3.6 shared libraries
+     command: ldconfig 

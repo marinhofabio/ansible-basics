@@ -1,9 +1,10 @@
-- hosts: all
+- hosts: servers
   user: fmarinho
   become: yes
+  connection: ssh
   gather_facts: false
   tasks:
    - name: INSTALLING JAVA 1.8 PACKAGE AND DEPENDENCIES 
      yum:
-       name: java-1.8.0-openjdk.x86_64
+       name:  java-1.8.0-openjdk.x86_64
        state: present

@@ -1,0 +1,18 @@
+- hosts: servers
+  user: fmarinho
+  become: yes
+  connection: ssh
+  gather_facts: false
+  tasks:
+   # TASK 27 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE27     
+     command: "sysctl -w net.ipv6.conf.all.accept_redirects=0"
+   # TASK 28 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE28
+     command: "sysctl -w net.ipv6.conf.all.accept_source_route=0"
+   # TASK 29 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE29  
+     command: "sysctl -w net.ipv6.conf.default.accept_redirects=0"
+   # TASK 30 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE30
+     command: "sysctl -w net.ipv6.conf.default.accept_source_route=0"

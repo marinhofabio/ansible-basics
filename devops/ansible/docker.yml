@@ -1,13 +1,14 @@
 - hosts: all
   user: fmarinho
   become: yes
+  connection: ssh
   gather_facts: false
   tasks:
    - name: INSTALLING DOCKER
      yum:
-       name: docker
+       name:  docker
        state: present
    - name: ENSURE THE DOCKER SERVICE IS RUNNING AFTER INSTALLATION
      service:
-       name: docker
+       name:  docker
        state: started

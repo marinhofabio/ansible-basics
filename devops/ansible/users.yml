@@ -1,6 +1,7 @@
-- hosts: all
+- hosts: servers
   user: fmarinho
   become: yes
+  connection: ssh
   gather_facts: false
   tasks:
   - name: ADD GROUP LSALES
@@ -37,5 +38,3 @@
       generate_ssh_key: yes
       ssh_key_bits: 2048
       ssh_key_file: .ssh/id_rsa
-
-

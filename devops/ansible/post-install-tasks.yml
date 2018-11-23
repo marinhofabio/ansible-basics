@@ -1,0 +1,15 @@
+- hosts: servers
+  user: fmarinho
+  become: yes
+  connection: ssh
+  gather_facts: false
+  tasks:
+   - name: Installing Basic Packages 
+     yum:
+       name: 
+       - '@Development Tools'
+       - 'openssl-devel'
+       - 'epel-release'
+       - 'yum-utils'
+       - 'git-all'
+       state: latest

@@ -1,9 +1,10 @@
-- hosts: all
+- hosts: servers
   user: fmarinho
   become: yes
+  connection: ssh
   gather_facts: false
   tasks:
    - name: INSTALLING POSTGRES
      yum:
-       name: postgresql-server
+       name:  postgresql-server
        state: latest

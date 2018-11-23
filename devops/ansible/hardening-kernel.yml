@@ -1,0 +1,27 @@
+- hosts: servers
+  user: fmarinho
+  become: yes
+  connection: ssh
+  gather_facts: false
+  tasks:
+   # TASK 04 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE04
+     command: "sysctl -w kernel.core_uses_pid=1"
+   # TASK 05 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE05
+     command: "sysctl -w kernel.ctrl-alt-del=0"
+   # TASK 06 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE06
+     command: "sysctl -w kernel.dmesg_restrict=1"
+   # TASK 07 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE07
+     command: "sysctl -w kernel.kptr_restrict=2"
+   # TASK 08 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE08    
+     command: "sysctl -w kernel.randomize_va_space=2"
+   # TASK 09 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE09
+     command: "sysctl -w kernel.sysrq=0"
+   # TASK 10 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE10     
+     command: "sysctl -w kernel.yama.ptrace_scope=1"

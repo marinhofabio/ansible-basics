@@ -1,8 +1,9 @@
-- hosts: all
+- hosts: servers
   user: fmarinho
   become: yes
+  connection: ssh
   gather_facts: false
   tasks:
    -  service:
-       name: nginx
+       name:  nginx
        state: reloaded

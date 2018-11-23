@@ -1,9 +1,10 @@
-- hosts: all
+- hosts: servers
   user: fmarinho
   become: yes
+  connection: ssh
   gather_facts: false
   tasks:
    - name: INSTALLING THE OPENSSL PACKAGE AND DEPENDENCIES
      yum:
-       name: openssl-devel
+       name:  openssl-devel
        state: present

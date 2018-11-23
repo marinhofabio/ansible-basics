@@ -1,14 +1,24 @@
+<<<<<<< HEAD
 - hosts: all
+=======
+- hosts: servers
+>>>>>>> 8a807637ab43d632f9ad539d4cd568c5b8a7c062
   user: fmarinho
   become: yes
+  connection: ssh
   gather_facts: false
   tasks:
   - name: Installing baseline file
     template:
+<<<<<<< HEAD
       src:  /home/fmarinho/linux-academy/devops/ansible/template-files/baseline.template
       dest: /etc/sysctl.d/90-security-baseline.conf
+=======
+      src:   files/baseline.template
+      dest:  /etc/sysctl.d/90-security-baseline.conf
+>>>>>>> 8a807637ab43d632f9ad539d4cd568c5b8a7c062
       owner: root
       group: root
-      mode: "u=rw,g=r,o=r"
+      mode:  0660
   - name: Make the kernel read the security-baseline file
     command: sysctl --system

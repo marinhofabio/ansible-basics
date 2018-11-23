@@ -1,0 +1,9 @@
+- hosts: servers
+  user: fmarinho
+  become: yes
+  gather_facts: false
+  connection: ssh
+  tasks:
+   # Setting the value to 1 will prevent access to the dmesg command. Only the root user will have access.
+   - name: RESTRICTING ACCESS TO DMESG
+     command: "sysctl -w kernel.dmesg_restrict=1"

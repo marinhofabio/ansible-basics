@@ -1,9 +1,10 @@
-- hosts: all
+- hosts: servers
   user: fmarinho
   become: yes
+  connection: ssh
   gather_facts: false
   tasks:
    - name: UPDATE ALL PACKAGES TO THE LATEST VERSION AVAIABLE 
      yum:
-       name: '*'
+       name:  '*'
        state: latest

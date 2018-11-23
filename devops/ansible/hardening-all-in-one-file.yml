@@ -1,0 +1,95 @@
+- hosts: servers
+  user: fmarinho
+  become: yes
+  gather_facts: false
+  tasks:
+   # By setting this to 1, users can no longer create soft or hard links to files which they do not own. #
+   - name: APPLYING KERNEL HARDENING BASELINE01
+     command: "sysctl -w fs.protected_hardlinks=1"
+   # By setting this to 1, symbolic links are permitted to be followed only when outside a sticky world-writable directory. #
+   - name: APPLYING KERNEL HARDENING BASELINE02
+     command: "sysctl -w fs.protected_symlinks=1"
+   # Disallow core dumping by setuid and setgid programs. #
+   - name: APPLYING KERNEL HARDENING BASELINE03
+     command: "sysctl -w fs.suid_dumpable=0"
+   # By setting core_uses_pid to 1, the coredump filename becomes core.PID. #
+   - name: APPLYING KERNEL HARDENING BASELINE04
+     command: "sysctl -w kernel.core_uses_pid=1"
+   # When the value in this file is 0, ctrl-alt-del is trapped and sent to the init(1) program to handle a graceful restart. #
+   - name: APPLYING KERNEL HARDENING BASELINE05
+     command: "sysctl -w kernel.ctrl-alt-del=0"
+   # This toggle indicates whether unprivileged users are prevented from using dmesg to view messages from the kernel’s log buffer.#
+   - name: APPLYING KERNEL HARDENING BASELINE06
+     command: "sysctl -w kernel.dmesg_restrict=1"
+   # This toggle indicates whether restrictions are placed on exposing kernel addresses via /proc and other interfaces.#
+   - name: APPLYING KERNEL HARDENING BASELINE07
+     command: "sysctl -w kernel.kptr_restrict=2"
+   # help defeat certain types of buffer overflow attacks. The default and recommended setting is 2. #
+   - name: APPLYING KERNEL HARDENING BASELINE08    
+     command: "sysctl -w kernel.randomize_va_space=2"
+   # TASK 09 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE09
+     command: "sysctl -w kernel.sysrq=0"
+   # Only a parent process can be debugged using ptrace. #
+   - name: APPLYING KERNEL HARDENING BASELINE10     
+     command: "sysctl -w kernel.yama.ptrace_scope=1"
+   # TASK 11 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE11  
+     command: "sysctl -w net.ipv4.conf.all.accept_redirects=0"
+   # TASK 12 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE12     
+     command: "sysctl -w net.ipv4.conf.all.accept_source_route=0"
+   # TASK 13 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE13
+     command: "sysctl -w net.ipv4.conf.all.bootp_relay=0"
+   # TASK 14 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE14  
+     command: "sysctl -w net.ipv4.conf.all.forwarding=0"
+   # TASK 15 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE15
+     command: "sysctl -w net.ipv4.conf.all.log_martians=1"
+   # TASK 16 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE16  
+     command: "sysctl -w net.ipv4.conf.all.mc_forwarding=0"
+   # TASK 17 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE17  
+     command: "sysctl -w net.ipv4.conf.all.proxy_arp=0"
+   # TASK 18 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE18  
+     command: "sysctl -w net.ipv4.conf.all.rp_filter=1"
+   # TASK 19 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE19  
+     command: "sysctl -w net.ipv4.conf.all.send_redirects=0"
+   # TASK 20 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE20  
+     command: "sysctl -w net.ipv4.conf.default.accept_redirects=0"
+   # TASK 21 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE21  
+     command: "sysctl -w net.ipv4.conf.default.accept_source_route=0"
+   # TASK 22 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE22  
+     command: "sysctl -w net.ipv4.conf.default.log_martians=1"
+   # TASK 23 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE23  
+     command: "sysctl -w net.ipv4.icmp_echo_ignore_broadcasts=1"
+   # TASK 24 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE24  
+     command: "sysctl -w net.ipv4.icmp_ignore_bogus_error_responses=1"
+   # TASK 25 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE25      
+     command: "sysctl -w net.ipv4.tcp_syncookies=1"
+   # TASK 26 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE26     
+     command: "sysctl -w net.ipv4.tcp_timestamps=1"
+   # Accept Redirects. Functional default: enabled if local forwarding is disabled. disabled if local forwarding is enabled. # 
+   - name: APPLYING KERNEL HARDENING BASELINE27     
+     command: "sysctl -w net.ipv6.conf.all.accept_redirects=0"
+   # # Accept only routing header type 2 # 
+   - name: APPLYING KERNEL HARDENING BASELINE28
+     command: "sysctl -w net.ipv6.conf.all.accept_source_route=0"
+   # Accept Redirects. Functional default: enabled if local forwarding is disabled. disabled if local forwarding is enabled. #
+   - name: APPLYING KERNEL HARDENING BASELINE29  
+     command: "sysctl -w net.ipv6.conf.default.accept_redirects=0"
+   # Accept only routing header type 2 #
+   - name: APPLYING KERNEL HARDENING BASELINE30
+     command: "sysctl -w net.ipv6.conf.default.accept_source_route=0"

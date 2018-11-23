@@ -1,9 +1,10 @@
-- hosts: all
+- hosts: servers
   user: fmarinho
   become: yes
+  connection: ssh
   gather_facts: false
   tasks:
    - name: ENSURE THE NGINX SERVICE IS NOT RUNNING
      service:
-       name: nginx
+       name:  nginx
        state: stopped

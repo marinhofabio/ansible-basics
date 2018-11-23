@@ -1,0 +1,53 @@
+- hosts: servers
+  user: fmarinho
+  become: yes
+  connection: ssh
+  gather_facts: false
+  tasks:
+   - name: APPLYING KERNEL HARDENING BASELINE11  
+     command: "sysctl -w net.ipv4.conf.all.accept_redirects=0"
+   # TASK 12 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE12     
+     command: "sysctl -w net.ipv4.conf.all.accept_source_route=0"
+   # TASK 13 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE13
+     command: "sysctl -w net.ipv4.conf.all.bootp_relay=0"
+   # TASK 14 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE14  
+     command: "sysctl -w net.ipv4.conf.all.forwarding=0"
+   # TASK 15 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE15
+     command: "sysctl -w net.ipv4.conf.all.log_martians=1"
+   # TASK 16 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE16  
+     command: "sysctl -w net.ipv4.conf.all.mc_forwarding=0"
+   # TASK 17 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE17  
+     command: "sysctl -w net.ipv4.conf.all.proxy_arp=0"
+   # TASK 18 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE18  
+     command: "sysctl -w net.ipv4.conf.all.rp_filter=1"
+   # TASK 19 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE19  
+     command: "sysctl -w net.ipv4.conf.all.send_redirects=0"
+   # TASK 20 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE20  
+     command: "sysctl -w net.ipv4.conf.default.accept_redirects=0"
+   # TASK 21 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE21  
+     command: "sysctl -w net.ipv4.conf.default.accept_source_route=0"
+   # TASK 22 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE22  
+     command: "sysctl -w net.ipv4.conf.default.log_martians=1"
+   # TASK 23 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE23  
+     command: "sysctl -w net.ipv4.icmp_echo_ignore_broadcasts=1"
+   # TASK 24 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE24  
+     command: "sysctl -w net.ipv4.icmp_ignore_bogus_error_responses=1"
+   # TASK 25 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE25      
+     command: "sysctl -w net.ipv4.tcp_syncookies=1"
+   # TASK 26 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE26     
+     command: "sysctl -w net.ipv4.tcp_timestamps=1"

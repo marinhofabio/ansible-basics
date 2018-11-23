@@ -1,0 +1,22 @@
+- hosts: servers
+  user: fmarinho
+  become: yes
+  connection: ssh
+  gather_facts: false
+  tasks:
+   - name: INSTALLING MARIADB PACKAGES AND DEPENDENCIES 
+     yum:
+       name:
+       - 'mariadb'
+       - 'mariadb-bench'
+       - 'mariadb-devel' 
+       - 'mariadb-libs' 
+       - 'mariadb-server' 
+       - 'mariadb-test' 
+       state: present
+   - name: ENSURE THAT THE SERVICE IS RUNNING AFTER INSTALLATION
+     service:
+       name:  mariadb
+       state: started
+   - name: ENABLE MARIADB SERVICE TO BE LOADED AT BOOT
+     command: systemctl enable mariadb

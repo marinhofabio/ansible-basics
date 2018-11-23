@@ -1,9 +1,10 @@
-- hosts: all
+- hosts: servers
   user: fmarinho
   become: yes
+  connection: ssh
   gather_facts: false
   tasks:
    - name: INSTALLING THE 'DEVELOPMENT TOOLS' PACKAGE GROUP
      yum:
-       name: "@Development Tools"
+       name:  "@Development Tools"
        state: present

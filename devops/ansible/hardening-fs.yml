@@ -1,0 +1,15 @@
+- hosts: servers
+  user: fmarinho
+  become: yes
+  connection: ssh
+  gather_facts: false
+  tasks:
+   # TASK 01 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE01
+     command: "sysctl -w fs.protected_hardlinks=1"
+   # TASK 02 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE02
+     command: "sysctl -w fs.protected_symlinks=1"
+   # TASK 03 DESCRIPTION #
+   - name: APPLYING KERNEL HARDENING BASELINE03
+     command: "sysctl -w fs.suid_dumpable=0"
