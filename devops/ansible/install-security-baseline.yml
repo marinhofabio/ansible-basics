@@ -1,11 +1,11 @@
-- hosts: workstation
+- hosts: all
   user: fmarinho
   become: yes
   gather_facts: false
   tasks:
   - name: Installing baseline file
     template:
-      src:  /home/fmarinho/linux-academy/devops/ansible/baseline.template
+      src:  /home/fmarinho/linux-academy/devops/ansible/template-files/baseline.template
       dest: /etc/sysctl.d/90-security-baseline.conf
       owner: root
       group: root
