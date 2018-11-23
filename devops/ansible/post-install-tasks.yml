@@ -4,7 +4,7 @@
   connection: ssh
   gather_facts: false
   tasks:
-   - name: Installing Basic Packages 
+   - name: INSTALLING BASIC PACKAGES 
      yum:
        name: 
        - '@Development Tools'
@@ -12,4 +12,5 @@
        - 'epel-release'
        - 'yum-utils'
        - 'git-all'
+       - 'nmon '
        state: latest
